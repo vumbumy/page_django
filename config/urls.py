@@ -20,5 +20,6 @@ from rest_framework.authtoken import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('admin/auth', views.obtain_auth_token),
-    path('api/', include('booking.urls'))
+    # path('api/booking', include('booking.urls')),
+    path('api/', include('app_default.urls'))
 ]
