@@ -7,6 +7,8 @@ pip install -r requirements.txt
 
 ### Migration
 ```
+python manage.py makemigrations app_default
+
 python manage.py migrate
 ```
 
