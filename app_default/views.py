@@ -25,5 +25,10 @@ class HistoryList(generics.ListCreateAPIView):
     authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated,)
 
-    queryset = History.objects.all()
     serializer_class = HistorySerializer
+
+    def get_queryset(self):
+        if 'category' in self.kwargs:
+            return History.objects.filter(category=self.kwargs['category'])
+        
+        return History.objects.all()

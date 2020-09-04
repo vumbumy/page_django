@@ -14,8 +14,8 @@ class JobAdmin(admin.ModelAdmin):
     list_editable = ['company', 'description', 'started', 'ended']
 
 class HistoryAdmin(admin.ModelAdmin):
-    list_display = ['id', 'project', 'type', 'description']
-    list_editable = ['project', 'type', 'description']
+    list_display = ['id', 'project', 'category', 'description']
+    list_editable = ['project', 'category', 'description']
 
 
 admin.site.register(Project, ProjectAdmin)
