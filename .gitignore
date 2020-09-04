@@ -130,3 +130,6 @@ dmypy.json
 
 .idea
 *.iml
+
+# TODO: Temporary solution without promise
+migrations/

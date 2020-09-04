@@ -6,7 +6,7 @@ from app_default.models import Project, Job, History
 class ProjectAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'company', 'env', 'description', 'started', 'ended']
     list_editable = ['name', 'company', 'env', 'description', 'started', 'ended']
-    # raw_id_fields = ['subscriber']
+    raw_id_fields = ['company']
 
 
 class JobAdmin(admin.ModelAdmin):
@@ -14,8 +14,8 @@ class JobAdmin(admin.ModelAdmin):
     list_editable = ['company', 'description', 'started', 'ended']
 
 class HistoryAdmin(admin.ModelAdmin):
-    list_display = ['id', 'question', 'answer']
-    list_editable = ['question', 'answer']
+    list_display = ['id', 'project', 'type', 'description']
+    list_editable = ['project', 'type', 'description']
 
 
 admin.site.register(Project, ProjectAdmin)

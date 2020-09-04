@@ -37,8 +37,8 @@ class Project(models.Model):
 class History(models.Model):
     project = models.ForeignKey('Project', on_delete=models.PROTECT, null=True)
 
-    question = models.CharField(max_length=200)
-    answer = models.TextField()
+    type = models.IntegerField(default=0)
+    description = models.TextField()
 
     def __str__(self):
         return self.question

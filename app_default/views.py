@@ -1,10 +1,8 @@
 from rest_framework import generics
-
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 
-from app_default.models import Project, Job, History
-from app_default.serializers import DefaultSerializer
+from app_default.serializers import *
 
 
 class ProjectList(generics.ListCreateAPIView):
@@ -12,7 +10,7 @@ class ProjectList(generics.ListCreateAPIView):
     permission_classes = (IsAuthenticated,)
 
     queryset = Project.objects.all()
-    serializer_class = DefaultSerializer
+    serializer_class = ProjectSerializer
 
 
 class JobList(generics.ListCreateAPIView):
@@ -20,7 +18,7 @@ class JobList(generics.ListCreateAPIView):
     permission_classes = (IsAuthenticated,)
 
     queryset = Job.objects.all()
-    serializer_class = DefaultSerializer
+    serializer_class = JobSerializer
 
 
 class HistoryList(generics.ListCreateAPIView):
@@ -28,4 +26,4 @@ class HistoryList(generics.ListCreateAPIView):
     permission_classes = (IsAuthenticated,)
 
     queryset = History.objects.all()
-    serializer_class = DefaultSerializer
+    serializer_class = HistorySerializer
