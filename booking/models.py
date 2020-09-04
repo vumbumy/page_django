@@ -3,7 +3,6 @@ from django.conf import settings
 
 
 # Create your models here.
-
 class Booking(models.Model):
     subscriber = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='bookings')
 
